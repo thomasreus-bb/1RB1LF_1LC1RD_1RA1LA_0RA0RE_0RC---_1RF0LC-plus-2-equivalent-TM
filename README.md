@@ -1,4 +1,4 @@
-# Three BB(6) holdouts with one common Bell system
+# Three BB(6) holdouts: one machine with three start states
 
 | name | machine | Holdout Guide | tape grows to the |
 |---|---|---|---|
@@ -10,11 +10,12 @@ Thomas Reus with Claude (Anthropic), 11 Nov 2026
 
 ## Summary
 
-- The three machines are 3/2 Bells with the **same level map**. Every table entry that more than one of them uses gives the same result. They run one Bell system from three different starts.
+- The three machines are **one machine M** with three different start states. B and C are the mirrored table of A with the states renamed, so B is M started in state B and C is M started in state C (`tools/same_table.py`). M is a 3/2 Bell.
+- The three runs from the blank tape never meet: the levels of A, B and C drift apart like (3/2)^k (`tools/orbits.py`). So these are **three different halting questions**, not equivalent machines in the sense "A halts ⇔ B halts".
 - Exact level runs of 50,000 levels each (n up to about 10⁸⁸⁰⁶) show no HALT.
 - Over **every** sequence of residues up to depth 400 (not only the likely ones), no tail leads to a HALT. Long chains in the tail are always used up without a HALT.
 - A HALT was found only from tails that contain `00` or isolated single 1s. The real runs never produce these tails.
-- So the three machines very probably never halt. **This is not a proof.** A non-halting proof of the common Bell system would decide all three machines; what is still missing is described below.
+- So the three machines very probably never halt. **This is not a proof.** A non-halting proof of M for all tails of the family below would decide all three machines; what is still missing is described below.
 
 ## The level map
 
@@ -38,7 +39,13 @@ For B the tape is used as it is. For A and C the mirrored table is used (L and R
 
 **Long runs** (`tools/run_levels.py`, `data/run_levels.txt`). 50,000 levels per machine, up to n ≈ 10⁸⁸⁰⁶: no HALT. The residues of n are equally distributed. The tail stays short: its largest entry was 36 (A), 54 (B) and 42 (C), and an entry of 12 or more occurs in about 6 % of the levels.
 
-**Same level map** (`tools/compare_tables.py`, `data/compare_tables.txt`). Every table entry (r, W) → (e, W′) was computed for each of the three machines, over all tails reachable by any of them (both residues): 6,934 entries, and not one of them differs between A, B and C.
+**One machine, three starts** (`tools/same_table.py`, `data/same_table.txt`). With M = mirrored A = `1LB1RF_1RC1LD_1LA1RA_0LA0LE_0LC---_1LF0RC`:
+- B = M with the states renamed A→C, B→A, C→B, D→E, E→F, F→D, so B is M started in state B;
+- C (mirrored) = M with the states renamed A→B, B→C, C→A, D→E, E→F, F→D, so C is M started in state C.
+
+(Started in D or E, M behaves like the start in A or C after one step; started in F it never halts.) So the level map of the three machines is the same: as a check, all 6,934 table entries over the reachable tails were computed for each machine and agree (`tools/compare_tables.py`, `data/compare_tables.txt`).
+
+**The three runs never meet** (`tools/orbits.py`, `data/orbits.txt`). Over 3,000 levels, no level configuration of one machine appears in the run of another (at any level index). The difference of n between A and B stays small for 14 levels and then grows like (3/2)^k, to about 10^527 after 3,000 levels; the same holds for A and C. So halting of one machine says nothing directly about the others; only a proof for the whole family of tails would cover all three.
 
 **All residue sequences** (`tools/closure.py`, `data/closure.txt`). Starting from the first level of each machine, the tails were followed over every sequence of residues up to depth 400, for all tails up to 3,000 cells: no HALT for any of the three machines. 3,443 (A), 3,457 (B) and 1,853 (C) different tails appear. Only the branches with long chains `(011)^j` went over the cap: 460, 460 and 256.
 
@@ -94,6 +101,8 @@ Ideas for step 1 are very welcome. A closed regular language could perhaps also 
     python3 check_direct.py A           # table iteration and random levels vs. direct simulation
     python3 run_levels.py A 50000       # long run with tail statistics
     python3 closure.py A 400 3000       # all residue sequences up to depth 400
+    python3 same_table.py               # B and C are A with renamed states
+    python3 orbits.py 3000              # the runs of A, B, C never meet
     python3 compare_tables.py           # tables of A, B, C compared
     python3 grammar.py A                # grammar of the reachable tails
     python3 rules.py                    # parametric rules
@@ -110,6 +119,7 @@ Python 3 and gcc. `data/table_*.pkl` hold the computed table entries; without th
 | `tools/levelmap.py` | exact level map with the table of (r, W) → (e, W′) |
 | `tools/events.c`, `tools/first_level.py` | direct simulation from the blank tape |
 | `tools/check_direct.py` | checks against direct simulation |
+| `tools/same_table.py`, `tools/orbits.py` | one machine with three start states; the runs never meet |
 | `tools/run_levels.py`, `tools/closure.py`, `tools/compare_tables.py` | long runs, closure over all residues, table comparison |
 | `tools/chains.py`, `tools/random_tails.py` | long chains; where a HALT can come from |
 | `tools/grammar.py`, `tools/rules.py`, `tools/shapes.py` | grammar, parametric rules, growing a closed family |
