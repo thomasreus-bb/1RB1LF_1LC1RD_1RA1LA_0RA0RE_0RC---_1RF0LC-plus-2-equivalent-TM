@@ -1,0 +1,9 @@
+machine A (1RB1LF_1LC1RD_1RA1LA_0RA0RE_0RC---_1RF0LC): 50000 levels, log10 n = 8805.7, largest tail entry 36
+residues of n: {1: 25094, 0: 24906}
+tail entry k (fraction of levels): >=36: 0.0001, >=30: 0.00076, >=24: 0.0032, >=18: 0.015, >=17: 0.015, >=12: 0.063, >=9: 0.066, >=8: 0.077, >=6: 0.3, >=5: 0.53, >=3: 0.64, >=0: 1
+machine B (1RB1LE_1LC1RC_1LA1RD_1LD0RB_0LC0LF_0LB---): 50000 levels, log10 n = 8805.7, largest tail entry 54
+residues of n: {0: 24918, 1: 25082}
+tail entry k (fraction of levels): >=54: 2e-05, >=48: 6e-05, >=42: 0.00012, >=36: 0.00034, >=30: 0.0013, >=24: 0.0048, >=18: 0.017, >=12: 0.065, >=9: 0.068, >=8: 0.079, >=6: 0.3, >=5: 0.53, >=3: 0.63, >=0: 1
+machine C (1RB1LB_1RC1LD_1LA1RE_1RD0LA_0RB0RF_0RA---): 50000 levels, log10 n = 8805.7, largest tail entry 42
+residues of n: {1: 25068, 0: 24932}
+tail entry k (fraction of levels): >=42: 4e-05, >=36: 0.00018, >=30: 0.00092, >=24: 0.0038, >=18: 0.015, >=17: 0.015, >=12: 0.063, >=9: 0.066, >=8: 0.077, >=6: 0.3, >=5: 0.53, >=3: 0.64, >=0: 1

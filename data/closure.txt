@@ -1,0 +1,5 @@
+depth 50 tails 685 over the cap 48
+depth 100 tails 1219 over the cap 108
+depth 150 tails 1691 over the cap 168
+depth 200 tails 2105 over the cap 226
+depth 250 tails 2472 over the cap 282

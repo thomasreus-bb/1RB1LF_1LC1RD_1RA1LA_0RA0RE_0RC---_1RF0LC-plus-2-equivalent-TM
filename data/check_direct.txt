@@ -1,0 +1,9 @@
+machine A: first level at step 234: n = 3, W = 1110111111111  (tools start from n = 3, W = 1110111111111): True
+12 levels from (3, 1110111111111): table iteration = direct simulation: True  n = [3, 3, 8, 19, 48, 79, 129, 198, 304, 468, 709, 1068, 1609]
+40 random levels: table entry = direct simulation, differences: 0
+machine B: first level at step 70: n = 2, W = 1110111  (tools start from n = 2, W = 1110111): True
+12 levels from (2, 1110111): table iteration = direct simulation: True  n = [2, 4, 14, 28, 51, 81, 126, 196, 306, 466, 706, 1066, 1606]
+40 random levels: table entry = direct simulation, differences: 0
+machine C: first level at step 187: n = 3, W = 1110111111  (tools start from n = 3, W = 1110111111): True
+12 levels from (3, 1110111111): table iteration = direct simulation: True  n = [3, 3, 8, 19, 52, 85, 132, 205, 312, 475, 717, 1080, 1627]
+40 random levels: table entry = direct simulation, differences: 0

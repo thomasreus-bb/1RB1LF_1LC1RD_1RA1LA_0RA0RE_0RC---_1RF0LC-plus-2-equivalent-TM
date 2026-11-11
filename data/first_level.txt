@@ -1,0 +1,3 @@
+machine A: first level at step 234: n = 3, W = 1110111111111  (tools start from n = 48, W = 1110111110110111): False
+machine B: first level at step 70: n = 2, W = 1110111  (tools start from n = 14, W = 1110111111): False
+machine C: first level at step 187: n = 3, W = 1110111111  (tools start from n = 52, W = 111): False
