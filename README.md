@@ -38,7 +38,7 @@ For B the tape is used as it is. For A and C the mirrored table is used (L and R
 
 **Long runs** (`tools/run_levels.py`, `data/run_levels.txt`). 50,000 levels per machine, up to n ≈ 10⁸⁸⁰⁶: no HALT. The residues of n are equally distributed. The tail stays short: its largest entry was 36 (A), 54 (B) and 42 (C), and an entry of 12 or more occurs in about 6 % of the levels.
 
-**Same level map** (`tools/compare_tables.py`). Every table entry of one machine that is recomputed for another machine gives the same (e, W′). This holds for all 3,436 entries met by A and B over all residue sequences.
+**Same level map** (`tools/compare_tables.py`, `data/compare_tables.txt`). Every table entry (r, W) → (e, W′) was computed for each of the three machines, over all tails reachable by any of them (both residues): 6,934 entries, and not one of them differs between A, B and C.
 
 **All residue sequences** (`tools/closure.py`, `data/closure.txt`). Starting from the first level of each machine, the tails were followed over every sequence of residues up to depth 400, for all tails up to 3,000 cells: no HALT for any of the three machines. 3,443 (A), 3,457 (B) and 1,853 (C) different tails appear. Only the branches with long chains `(011)^j` went over the cap: 460, 460 and 256.
 

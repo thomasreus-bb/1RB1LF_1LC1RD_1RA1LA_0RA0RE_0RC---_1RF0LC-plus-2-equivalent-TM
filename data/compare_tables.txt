@@ -1,0 +1,1 @@
+6934 entries (r, W) over the reachable tails of A, B and C; entries that differ between the machines: 0
