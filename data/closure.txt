@@ -3,3 +3,26 @@ depth 100 tails 1219 over the cap 108
 depth 150 tails 1691 over the cap 168
 depth 200 tails 2105 over the cap 226
 depth 250 tails 2472 over the cap 282
+depth 300 tails 2832 over the cap 344
+depth 350 tails 3142 over the cap 400
+depth 400 tails 3443 over the cap 460
+machine A: no HALT for any residue sequence up to depth 400; 3443 tails, 460 branches over 3000 cells
+depth 50 tails 688 over the cap 48
+depth 100 tails 1229 over the cap 108
+depth 150 tails 1701 over the cap 166
+depth 200 tails 2112 over the cap 226
+depth 250 tails 2480 over the cap 280
+depth 300 tails 2843 over the cap 342
+depth 350 tails 3149 over the cap 400
+depth 400 tails 3457 over the cap 460
+machine B: no HALT for any residue sequence up to depth 400; 3457 tails, 460 branches over 3000 cells
+depth 50 tails 387 over the cap 30
+depth 100 tails 670 over the cap 60
+depth 150 tails 912 over the cap 92
+depth 200 tails 1133 over the cap 124
+depth 250 tails 1332 over the cap 158
+depth 300 tails 1522 over the cap 188
+depth 350 tails 1688 over the cap 222
+depth 400 tails 1853 over the cap 256
+machine C: no HALT for any residue sequence up to depth 400; 1853 tails, 256 branches over 3000 cells
+DONE

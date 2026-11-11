@@ -36,11 +36,11 @@ For B the tape is used as it is. For A and C the mirrored table is used (L and R
 
 ## Results
 
-**Long runs** (`tools/run_levels.py`, `data/run_levels.txt`). 50,000 levels per machine, up to n ≈ 10⁸⁸⁰⁶: no HALT. The residues of n are equally distributed. The tail stays short: its entries are at most a few dozen, and a long entry is rare.
+**Long runs** (`tools/run_levels.py`, `data/run_levels.txt`). 50,000 levels per machine, up to n ≈ 10⁸⁸⁰⁶: no HALT. The residues of n are equally distributed. The tail stays short: its largest entry was 36 (A), 54 (B) and 42 (C), and an entry of 12 or more occurs in about 6 % of the levels.
 
 **Same level map** (`tools/compare_tables.py`). Every table entry of one machine that is recomputed for another machine gives the same (e, W′). This holds for all 3,436 entries met by A and B over all residue sequences.
 
-**All residue sequences** (`tools/closure.py`, `data/closure.txt`). Starting from the first level of each machine, the tails were followed over every sequence of residues up to depth 400, for all tails up to 3,000 cells: no HALT. About 1,850 different tails appear. Only the branches with long chains `(011)^j` go over the cap.
+**All residue sequences** (`tools/closure.py`, `data/closure.txt`). Starting from the first level of each machine, the tails were followed over every sequence of residues up to depth 400, for all tails up to 3,000 cells: no HALT for any of the three machines. 3,443 (A), 3,457 (B) and 1,853 (C) different tails appear. Only the branches with long chains `(011)^j` went over the cap: 460, 460 and 256.
 
 For comparison, two other Bell-type holdouts of the same kind behave differently:
 - `1RB1LF_1LC0RD_---1LA_0LA0RE_1LA1RA_1LB0LD` has a 35-level residue sequence that leads to a HALT; its HALT chance is about 1.1·10⁻¹⁴ per level.
@@ -48,7 +48,7 @@ For comparison, two other Bell-type holdouts of the same kind behave differently
 
 Nothing like this was found here.
 
-**Long chains** (`tools/chains.py`). Small n (4 … 59) were started with the short tail beginnings followed by a chain `(011)^j`, with j from 0.3·n to 60·n, and simulated directly for up to 80 levels. In all 8,110 runs the chain was used up without a HALT.
+**Long chains** (`tools/chains.py`, `data/chains_A.txt`). Small n (4 … 39) were started with five short tail beginnings followed by a chain `(011)^j`, with j from 0.3·n to 60·n, and simulated directly for up to 80 levels. In all 900 runs the chain was used up without a HALT.
 
 **Where a HALT can come from at all** (`tools/random_tails.py`, `data/random_tails_A.txt`). With completely random tails after `(110)^n`, one level halts in about 1 of 1,000 cases. Every HALT found needs `00` or isolated single 1s in the tail, for example W = `1111001010101111000101111`. The real runs never produce such tails.
 
@@ -58,9 +58,9 @@ Nothing like this was found here.
 - blocks X = `3.5.2^j` (P) or `8.2^j` (Q), j ≥ 1;
 - end Y = `[3t]` or `[3, 3t]`.
 
-With two or more blocks the end is only `3` or `3.6`, and the later chains are short while the first chain can be long.
+With two or more blocks the end is only `3` or `3.6`. The first chain can be long (up to 1,491 at depth 400); the later ones are shorter (up to 111) (`data/grammar_A.txt`).
 
-**Parametric rules** (`tools/rules.py`, for large n). In the following, e is the change of n beyond 3q.
+**Parametric rules** (`tools/rules.py`, `data/rules.txt`, for large n). In the following, e is the change of n beyond 3q.
 
 | tail | r = 0 | r = 1 |
 |---|---|---|

@@ -19,7 +19,7 @@ def show(t):
     return ' | '.join(out)
 if len(sys.argv)>1: exec(sys.argv[1])
 else:
-    for t in range(1,6): print('[%d]'%(3*t).ljust(14), show([3*t]))
-    for t in range(2,6): print('[3,%d]'%(3*t).ljust(14), show([3,3*t]))
+    for t in range(1,6): print(('[%d]'%(3*t)).ljust(14), show([3*t]))
+    for t in range(2,6): print(('[3,%d]'%(3*t)).ljust(14), show([3,3*t]))
     for j in range(1,6): print(('P%d+[3]'%j).ljust(14), show([3,5]+[2]*j+[3]))
     for j in range(1,6): print(('Q%d+[3]'%j).ljust(14), show([8]+[2]*j+[3]))
