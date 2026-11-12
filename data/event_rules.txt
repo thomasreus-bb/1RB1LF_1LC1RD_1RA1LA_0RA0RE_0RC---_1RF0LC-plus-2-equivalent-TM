@@ -1,0 +1,2 @@
+main loop  m = 2 mod 3: X(m, [2,k]+R) -> X(m+k+7, R): 3600 cases (m <= 119, 2 <= k <= 19, 5 rests), 0 differ
+level end  m = 0 mod 3: X(m, [k]+R) -> X(4, [2]^(m/3)+[k+3]+R): 3510 cases (m <= 117, 2 <= k <= 19, 5 rests), 0 differ

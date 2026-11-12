@@ -91,7 +91,7 @@ A proof needs:
 1. a regular description of a family of tails that contains all reachable tails and is closed under the level map for all parameter values;
 2. the level rules for this family with parameters, proved for all chain lengths, for example by symbolic execution in busycoq.
 
-Ideas for step 1 are very welcome. A closed regular language could perhaps also be found directly by a CTL or MITM-DFA search with larger parameters than usual.
+More details for a proof (exact event rules, the real event stream, a candidate invariant and a halting family inside it) are in [`NOTES_for_proof.md`](NOTES_for_proof.md). Ideas for step 1 are very welcome. A closed regular language could perhaps also be found directly by a CTL or MITM-DFA search with larger parameters than usual.
 
 ## Reproduce
 
@@ -123,4 +123,5 @@ Python 3 and gcc. `data/table_*.pkl` hold the computed table entries; without th
 | `tools/run_levels.py`, `tools/closure.py`, `tools/compare_tables.py` | long runs, closure over all residues, table comparison |
 | `tools/chains.py`, `tools/random_tails.py` | long chains; where a HALT can come from |
 | `tools/grammar.py`, `tools/rules.py`, `tools/shapes.py` | grammar, parametric rules, growing a closed family |
+| `tools/xmap.c`, `tools/event_rules.py`, `tools/level_events.py`, `tools/event_stream.c`, `tools/event_classes.py`, `tools/family_test.py` | event level, see `NOTES_for_proof.md` |
 | `data/` | outputs of the tools and the computed tables |

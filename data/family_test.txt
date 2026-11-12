@@ -1,0 +1,17 @@
+seed 31, P(00) = 0.1: {'successor in F': 19999, 'HALT': 1}
+   example: (103, [8, 3, 20, 2, 2, 21, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 33])
+seed 32, P(00) = 0.1: {'successor in F': 20000}
+seed 33, P(00) = 0.3: {'successor in F': 20000}
+seed 34, P(00) = 0.3: {'successor in F': 20000}
+halting family X(m, [8, 3, K, 2, 2, 21] + [2]^j), m = 4:
+   K = 5: HALT for j in [30, 31, 32, 33]
+   K = 8: HALT for j in [32, 33, 34, 35]
+   K = 11: HALT for j in [34, 35, 36, 37]
+   K = 14: HALT for j in [36, 37, 38, 39]
+   K = 17: HALT for j in [38, 39, 40, 41]
+   K = 20: HALT for j in [40, 41, 42, 43]
+   K = 23: HALT for j in [42, 43, 44, 45]
+   K = 26: HALT for j in [44, 45, 46, 47]
+   K = 29: HALT for j in [46, 47, 48, 49]
+   K = 32: HALT for j in [48, 49, 50, 51]
+   m with HALT for K = 20, j = 40: [4, 7, 10, 13, 16, 19, 22, 25, 28, 31, 34, 37, 40, 43, 46, 49, 52, 55, 58]
